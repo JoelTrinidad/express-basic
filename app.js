@@ -21,7 +21,14 @@ app.get('/launchx', (req, res) => {
 // localhost:3000/explorersInNode
 app.get('/explorersInNode', (req, res) => {
     const explorer = {name: "Explorer", msg: "Hello"}
-    res.send(explorer)
+    res.send(explorer);
+})
+
+// Query Params: Recibir parámetros por la url
+// http://localhost:300/explorers/carlo
+// req.params = {"explorerName":"carlo"}
+app.get('/explorers/:explorerName', (req, res) => {
+    res.send(req.params);
 })
 
 // Con esto inicializamos esta app
